@@ -1,0 +1,9 @@
+# Environemnt
+/.kafka
+/.env
+
+# VSCode
+/.VSCode
+
+# Python cache
+/**/__pycache__/
