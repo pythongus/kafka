@@ -6,6 +6,8 @@ from sys import exit
 from typing import Callable
 from functools import partial
 import logging
+from time import sleep
+from datetime import time
 from kafka import KafkaProducer
 from dotenv import load_dotenv
 load_dotenv()
@@ -49,4 +51,10 @@ def send(producer: KafkaProducer, line: str):
 
 
 if __name__ == '__main__':
-    run()
+    print('KProducer running. <CTRL-C> to terminate')
+    try:
+        while True:
+            run()
+            sleep(5)
+    except KeyboardInterrupt:
+        print('KProducer terminated.')
