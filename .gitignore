@@ -1,6 +1,6 @@
 # Environemnt
 /.kafka
-/.env
+/.env*
 
 # VSCode
 /.VSCode
