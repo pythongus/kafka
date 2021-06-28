@@ -23,6 +23,16 @@ DATA_FILE = os.getenv('DATA_FILE')
 
 
 def run():
+    print('KProducer running. <CTRL-C> to terminate')
+    try:
+        while True:
+            send_data()
+            sleep(5)
+    except KeyboardInterrupt:
+        print('KProducer terminated.')
+
+
+def send_data():
     if not SERVERS:
         LOGGER.error('SERVERS not set')
         exit(1)
@@ -51,10 +61,4 @@ def send(producer: KafkaProducer, line: str):
 
 
 if __name__ == '__main__':
-    print('KProducer running. <CTRL-C> to terminate')
-    try:
-        while True:
-            run()
-            sleep(5)
-    except KeyboardInterrupt:
-        print('KProducer terminated.')
+    run()
