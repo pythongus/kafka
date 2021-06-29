@@ -18,7 +18,7 @@ These variables can be set in the `.env` file and provide the necessary paramete
 The producer can be started with the following code
 
 ```shell
-\> python -m pyprod.producer
+python -m pyprod.producer
 ```
 
 The producer will send the same `DATA_FILE` repeatedly, at 5-second intervals.
@@ -28,7 +28,7 @@ The producer will send the same `DATA_FILE` repeatedly, at 5-second intervals.
 The consumer will read the messages from the topic and display on the console. If using the Python version, this command will run the application:
 
 ```shell
-\> python -m pyprod.consumer
+python -m pyprod.consumer
 ```
 
 ## Docker For the Consumer
@@ -38,7 +38,7 @@ A Docker image can be built with the included `Dockerfile`.
 ### Building the Image
 
 ```shell
-\> docker build -t kafkaconsumer:0.0.1
+docker build -t kafkaconsumer:0.0.1
 ```
 
 The tag name can be changed to suit the needs of the application.
@@ -46,7 +46,7 @@ The tag name can be changed to suit the needs of the application.
 ### Running the Image in a Named Container
 
 ```shell
-\> docker run --env-file <environment_file> --name kconsumer01 kafkaconsumer:0.0.1
+docker run --env-file <environment_file> --name kconsumer01 kafkaconsumer:0.0.1
 ```
 
 The container name is just a suggestion. The original test was made with a consumer group containing three consumer applications, `kconsumer01`, `kconsumer02`, and `kconsumer03`.
